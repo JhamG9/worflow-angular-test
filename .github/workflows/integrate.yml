@@ -12,9 +12,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
-      - run: npm ci
+          
       - run: sudo apt install chromium-browser
-      - name:
+      - run: npm ci
+      
+      - name: 'NPM test'
         run: |
               export CHROME_BIN=/usr/bin/chromium-browser
               CI=true npm run test-headless
