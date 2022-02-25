@@ -13,5 +13,10 @@ jobs:
         with:
           node-version: 16.13.1
       - run: npm ci
-      - run: npm run test
-      # - run: npm run build
+      - run: sudo apt install chromium-browser
+      - name:
+        run: |
+              export CHROME_BIN=/usr/bin/chromium-browser
+              CI=true npm run test-headless
+        env:
+          CI: true
