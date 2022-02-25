@@ -12,11 +12,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: 116fd660-ef5a-4460-94cb-ad1ab5a33ce3
-          heroku_app_name: "jham-workflows" #Must be unique in Heroku
-          heroku_email: "jhampiergiron@gmial.com"
       - run: sudo apt install chromium-browser
       - run: npm install
       - run: npm ci
@@ -27,3 +22,8 @@ jobs:
               CI=true npm run test
         env:
           CI: true
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: 116fd660-ef5a-4460-94cb-ad1ab5a33ce3
+          heroku_app_name: "jham-workflows" #Must be unique in Heroku
+          heroku_email: "jhampiergiron@gmial.com"
