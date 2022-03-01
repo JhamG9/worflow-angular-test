@@ -1,4 +1,4 @@
-name: integracion workflow '${ES_HOSTS}'
+name: integracion workflow
 
 on: 
   push:
@@ -25,5 +25,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: 116fd660-ef5a-4460-94cb-ad1ab5a33ce3
-          heroku_app_name: "jham-workflows" #Must be unique in Heroku
+          heroku_app_name: '${ES_HOSTS}' #"jham-workflows" #Must be unique in Heroku
           heroku_email: "jhampiergiron@gmial.com"
