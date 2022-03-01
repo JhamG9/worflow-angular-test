@@ -1,4 +1,4 @@
-name: integracion workflow
+name: integracion workflow '${ES_HOSTS}'
 
 on: 
   push:
